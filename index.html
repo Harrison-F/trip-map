@@ -8,7 +8,16 @@
   <style>
     body { background: #0c0c0e; color: #e4e4e7; font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
     .box { text-align: center; }
-    .box h2 { margin-bottom: 16px; font-size: 1.2em; }
+    .box h2 { margin-bottom: 4px; font-size: 1.4em; }
+    .box .secret {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ef4444;
+      margin-bottom: 20px;
+    }
     .box input { background: #161618; border: 1px solid #232326; border-radius: 8px; padding: 10px 16px; color: #e4e4e7; font-size: 1em; outline: none; text-align: center; }
     .box input:focus { border-color: #f7931a; }
     .box .err { color: #ef4444; font-size: 0.85em; margin-top: 8px; display: none; }
@@ -17,6 +26,7 @@
 <body>
   <div class="box">
     <h2>🔒</h2>
+    <div class="secret">⚠ Top Secret — Do Not Enter ⚠</div>
     <input type="password" id="pw" placeholder="Password" autofocus onkeydown="if(event.key==='Enter')check()">
     <div class="err" id="err">Incorrect</div>
   </div>

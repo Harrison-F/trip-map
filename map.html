@@ -26,11 +26,17 @@
       background: rgba(12,12,14,0.88); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 12px 20px;
-      display: flex; align-items: center; gap: 16px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .header h1 {
+    .header-left {
+      margin-left: 40px; /* clear zoom controls */
+    }
+    .header-left h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1em; font-weight: 700; letter-spacing: -0.02em;
+    }
+    .header-right {
+      text-align: right;
     }
     .header .route { color: var(--text-dim); font-size: 0.78em; }
     .header .route span { color: var(--orange); }
@@ -116,17 +122,17 @@
 
     /* Legend */
     .legend {
-      position: fixed; bottom: 20px; left: 20px; z-index: 1000;
+      position: fixed; bottom: 24px; left: 24px; z-index: 1000;
       background: rgba(22,22,24,0.92); backdrop-filter: blur(12px);
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 14px 16px; font-size: 0.78em; max-width: 280px;
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px 22px; font-size: 1.05em; max-width: 360px;
     }
-    .legend h4 { font-family: 'Space Grotesk',sans-serif; font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 8px; }
-    .legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .legend h4 { font-family: 'Space Grotesk',sans-serif; font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 12px; }
+    .legend-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
     .legend-row:last-child { margin-bottom: 0; }
     .legend-num {
-      width: 18px; height: 18px; border-radius: 50%; background: var(--orange); color: #000;
-      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75em; flex-shrink: 0;
+      width: 24px; height: 24px; border-radius: 50%; background: var(--orange); color: #000;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8em; flex-shrink: 0;
     }
     .legend-num.dim { background: #52525b; }
     .legend-text { color: #a1a1aa; }
@@ -140,8 +146,12 @@
 </head>
 <body>
   <div class="header">
-    <h1>Post-OFF Europe</h1>
-    <div class="route">Oslo <span>→</span> Warsaw <span>→</span> Prague · June 3–19, 2026</div>
+    <div class="header-left">
+      <h1>Harrison's Conference Options</h1>
+    </div>
+    <div class="header-right">
+      <div class="route">Oslo <span>→</span> Warsaw <span>→</span> Prague · June 3–19, 2026</div>
+    </div>
   </div>
   <div id="map"></div>
   <div class="legend">
