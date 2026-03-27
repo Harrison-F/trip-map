@@ -163,6 +163,12 @@
     <div class="legend-row"><span class="legend-num">4</span><span class="legend-text"><strong>BTC Prague</strong> <span class="d">· Jun 11–13</span></span></div>
   </div>
 
+  <script>
+    // Redirect to lock page if not authenticated
+    if (sessionStorage.getItem('auth') !== 'ok') {
+      window.location.href = './';
+    }
+  </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Geodesic plugin for curved flight arcs -->
   <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic@2.7.1/dist/leaflet.geodesic.umd.min.js"></script>
