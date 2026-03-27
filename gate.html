@@ -25,7 +25,7 @@
       // Simple client-side hash check (not cryptographically secure, but sufficient for unlisted page)
       const pw = document.getElementById('pw').value;
       const hash = Array.from(new TextEncoder().encode(pw)).reduce((h, b) => ((h << 5) - h + b) | 0, 0);
-      if (hash === 1536108) {  // hash of 'off26'
+      if (hash === 71804) {  // hash of 'HRF'
         window.location.href = 'map.html';
       } else {
         document.getElementById('err').style.display = 'block';
