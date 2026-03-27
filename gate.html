@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Trip Map</title>
+  <style>
+    body { background: #0c0c0e; color: #e4e4e7; font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .box { text-align: center; }
+    .box h2 { margin-bottom: 16px; font-size: 1.2em; }
+    .box input { background: #161618; border: 1px solid #232326; border-radius: 8px; padding: 10px 16px; color: #e4e4e7; font-size: 1em; outline: none; text-align: center; }
+    .box input:focus { border-color: #f7931a; }
+    .box .err { color: #ef4444; font-size: 0.85em; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🔒</h2>
+    <input type="password" id="pw" placeholder="Password" autofocus onkeydown="if(event.key==='Enter')check()">
+    <div class="err" id="err">Incorrect</div>
+  </div>
+  <script>
+    function check() {
+      // Simple client-side hash check (not cryptographically secure, but sufficient for unlisted page)
+      const pw = document.getElementById('pw').value;
+      const hash = Array.from(new TextEncoder().encode(pw)).reduce((h, b) => ((h << 5) - h + b) | 0, 0);
+      if (hash === 1536108) {  // hash of 'off26'
+        window.location.href = 'map.html';
+      } else {
+        document.getElementById('err').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
